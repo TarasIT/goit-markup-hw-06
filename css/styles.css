@@ -616,6 +616,11 @@ p {
     border-color var(--transition-duration) var(--transition-timing-function);
 }
 
+.modal-checkbox:hover > .modal-checkbox-icon,
+.modal-input-checkbox:focus + .modal-checkbox > .modal-checkbox-icon {
+  border-color: var(--blue-text-background-color);
+}
+
 .modal-checkbox-icon-svg {
   position: absolute;
   top: 50%;
@@ -626,7 +631,6 @@ p {
 }
 
 .agreement-conditions {
-  margin-left: 4px;
   color: var(--blue-text-background-color);
 }
 
