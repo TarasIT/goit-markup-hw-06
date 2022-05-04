@@ -416,7 +416,7 @@ p {
 
 .submit-btn,
 .submit-modal-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   min-width: 200px;
@@ -435,12 +435,18 @@ p {
   background-color: var(--blue-text-background-color);
 }
 
+.subscribe-field-group {
+  display: flex;
+  width: 570px;
+}
+
 .send-email-input {
   width: 358px;
   height: 50px;
   border-radius: 4px;
   margin-right: 12px;
   padding-left: 16px;
+  cursor: pointer;
 
   line-height: 1.25;
   letter-spacing: 0.03em;
@@ -453,7 +459,6 @@ p {
 
 .icon-send {
   margin-left: 10px;
-
   fill: var(--white-text-background-color);
 }
 
@@ -463,6 +468,7 @@ p {
 
 .modal-call {
   margin-bottom: 12px;
+  text-align: center;
 
   font-weight: 700;
   font-size: 20px;
@@ -584,6 +590,7 @@ p {
 }
 
 .modal-checkbox {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -607,7 +614,7 @@ p {
     border-color var(--transition-duration) var(--transition-timing-function);
 }
 
-.modal-checkbox-icon > svg {
+.modal-checkbox-icon-svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -617,8 +624,8 @@ p {
 }
 
 .agreement-conditions {
+  margin-left: 4px;
   color: var(--blue-text-background-color);
-  text-decoration: underline;
 }
 
 .submit-modal-btn {
