@@ -21,31 +21,39 @@
   </head>
 
   <body>
-    <header class="site-header">
-      <div class="container header-box">
-        <nav class="nav-box">
-          <a class="upper-logo" href="" lang="en"
-            >Web<span class="upper-logo-studio">Studio</span></a
+    <header class="page-header">
+      <div class="container page-header__container">
+        <nav class="navigation">
+          <a class="logo navigation__logo" href="" lang="en"
+            >Web<span class="logo--change-color">Studio</span></a
           >
           <ul class="site-navigation">
-            <li class="nav-item"><a class="site-nav" href="./index.html">Студия</a></li>
-            <li class="nav-item">
-              <a class="site-nav current" href="./portfolio.html">Портфолио</a>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="./index.html">Студия</a>
             </li>
-            <li class="nav-item"><a class="site-nav" href="">Контакты</a></li>
+            <li class="site-navigation__item">
+              <a
+                class="site-navigation__link site-navigation__link--current"
+                href="./portfolio.html"
+                >Портфолио</a
+              >
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="">Контакты</a>
+            </li>
           </ul>
         </nav>
-        <ul class="upper-links">
-          <li class="upper-link-item">
-            <a class="upper-link" href="mailto:info@devstudio.com">
-              <svg class="envelope-logo" width="16" height="12">
+        <ul class="webstudio-contacts">
+          <li class="webstudio-contacts__item">
+            <a class="webstudio-contacts__link" href="mailto:info@devstudio.com">
+              <svg class="webstudio-contacts__envelope-logo" width="16" height="12">
                 <use href="./images/icons.svg#envelope-1"></use></svg
               >info@devstudio.com</a
             >
           </li>
-          <li class="upper-link-item">
-            <a class="upper-link" href="tel:+380961111111">
-              <svg class="smartphone-logo" width="10" height="16">
+          <li class="webstudio-contacts__item">
+            <a class="webstudio-contacts__link" href="tel:+380961111111">
+              <svg class="webstudio-contacts__smartphone-logo" width="10" height="16">
                 <use href="./images/icons.svg#smartphone-2"></use></svg
               >+38 096 111 11 11</a
             >

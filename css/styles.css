@@ -15,6 +15,7 @@
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-duration: 250ms;
   --backdrop-background-color: rgba(0, 0, 0, 0.2);
+  --background-color-submit-btn: #188ce8;
 }
 
 body {
@@ -32,7 +33,7 @@ p {
 }
 
 /* <!------------------- header----------------------> */
-.site-header {
+.page-header {
   background-color: var(--white-text-background-color);
   border-bottom: 1px solid var(--accent-border-header-color);
 }
@@ -43,31 +44,31 @@ p {
   padding: 0 15px;
 }
 
-.header-box,
-.nav-box,
+.page-header__container,
+.navigation,
 .site-navigation,
-.nav-item,
-.upper-links,
-.upper-link-item {
+.site-navigation__item,
+.webstudio-contacts,
+.webstudio-contacts__item {
   display: flex;
   align-items: center;
 }
 
-.upper-logo {
+.navigation__logo {
   padding-top: 24px;
   padding-bottom: 25px;
   margin-right: 93px;
 }
 
-.nav-item:not(:last-child) {
+.site-navigation__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.upper-link-item:not(:last-child) {
+.webstudio-contacts__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.upper-links {
+.webstudio-contacts {
   margin-left: auto;
 }
 
@@ -75,8 +76,7 @@ p {
   padding: 94px 0;
 }
 
-.upper-logo,
-.bottom-logo {
+.logo {
   font-family: 'Raleway';
   font-weight: 700;
   font-size: 26px;
@@ -86,16 +86,16 @@ p {
   text-decoration: none;
 }
 
-.upper-logo-studio {
+.logo--header-color {
   color: var(--black-text-color);
 }
 
-.nav-item {
+.site-navigation__item {
   position: relative;
 }
 
-.site-nav,
-.upper-link {
+.site-navigation__link,
+.webstudio-contacts__link {
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -106,7 +106,7 @@ p {
   text-decoration: none;
 }
 
-.site-nav {
+.site-navigation__link {
   color: var(--black-text-color);
 
   transition-property: color, fill;
@@ -114,7 +114,7 @@ p {
   transition-timing-function: var(--transition-timing-function);
 }
 
-.site-nav.current::after {
+.site-navigation__link--current::after {
   position: absolute;
   display: block;
   content: '';
@@ -126,11 +126,11 @@ p {
   background-color: var(--blue-text-background-color);
 }
 
-.site-nav.current {
+.site-navigation__link--current {
   color: var(--blue-text-background-color);
 }
 
-.upper-link {
+.webstudio-contacts__link {
   display: flex;
   align-items: center;
   color: var(--gray-text-color);
@@ -141,36 +141,36 @@ p {
   transition-timing-function: var(--transition-timing-function);
 }
 
-.upper-link:hover,
-.upper-link:focus {
+.webstudio-contacts__link:hover,
+.webstudio-contacts__link:focus {
   fill: var(--blue-text-background-color);
 }
 
-.site-nav:hover,
-.upper-link:hover,
-.site-nav:focus,
-.upper-link:focus {
+.site-navigation__link:hover,
+.webstudio-contacts__link:hover,
+.site-navigation__link:focus,
+.webstudio-contacts__link:focus {
   color: var(--blue-text-background-color);
 }
 
 .site-navigation,
-.upper-links,
+.webstudio-contacts,
 .portfolio-filters-list,
 .project-list,
-.features-list,
-.work-list,
-.team-list,
-.teammate-links-box,
+.features,
+.field-work,
+.team-section__list,
+.teammate__networks,
 .regular-clients-list,
-.join-links-list {
+.networks {
   list-style: none;
 }
 
-.envelope-logo {
+.webstudio-contacts__envelope-logo {
   margin-right: 10px;
 }
 
-.smartphone-logo {
+.webstudio-contacts__smartphone-logo {
   margin-right: 10px;
 }
 
@@ -309,30 +309,30 @@ p {
 }
 
 /* <!-------- contacts --------> */
-.contacts {
+.page-footer {
   background: var(--hero-footer-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-.contacts-box {
+.page-footer__container {
   display: flex;
 }
 
-.left-contacts-box {
+.contacts-box {
   margin-right: 70px;
 }
 
-.bottom-logo-studio {
+.logo--footer-color {
   color: var(--white-text-background-color);
 }
 
-.bottom-logo {
+.contacts-box__logo {
   display: block;
   margin-bottom: 20px;
 }
 
-.bottom-address {
+.address__post {
   margin-bottom: 9px;
 
   font-style: normal;
@@ -342,7 +342,7 @@ p {
   color: var(--white-text-background-color);
 }
 
-.bottom-link {
+.address__link {
   display: block;
 
   font-style: normal;
@@ -357,12 +357,12 @@ p {
   transition-timing-function: var(--transition-timing-function);
 }
 
-.bottom-link:not(:last-child) {
+.address__link:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.bottom-link:hover,
-.bottom-link:focus {
+.address__link:hover,
+.address__link:focus {
   color: var(--blue-text-background-color);
 }
 
@@ -375,24 +375,24 @@ p {
   padding-top: 12px;
 }
 
-.join-call,
-.subscribe-call {
+.join-section__slogan,
+.subscribe-field__slogan {
   margin-bottom: 20px;
 }
 
-.join-links-list {
+.networks {
   display: flex;
 }
 
-.join-link-item {
+.networks__item {
   margin-right: 10px;
 }
 
-.join-link-item:last-child {
+.networks__item:last-child {
   margin-right: 0;
 }
 
-.join-link {
+.networks__link {
   display: block;
   width: 44px;
   height: 44px;
@@ -405,17 +405,16 @@ p {
   transition-timing-function: var(--transition-timing-function);
 }
 
-.join-link:hover,
-.join-link:focus {
+.networks__link:hover,
+.networks__link:focus {
   background-color: var(--blue-text-background-color);
 }
 
-.join-link-logo {
+.networks__logo {
   fill: var(--white-text-background-color);
 }
 
-.submit-btn,
-.submit-modal-btn {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -435,12 +434,17 @@ p {
   background-color: var(--blue-text-background-color);
 }
 
-.subscribe-field-group {
+.submit-modal-btn:focus,
+.submit-modal-btn:hover {
+  background-color: var(--background-color-submit-btn);
+}
+
+.field-group {
   display: flex;
   width: 570px;
 }
 
-.send-email-input {
+.field-group__input {
   width: 358px;
   height: 50px;
   border-radius: 4px;
@@ -457,7 +461,7 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.icon-send {
+.button__icon {
   margin-left: 10px;
   fill: var(--white-text-background-color);
 }
@@ -672,12 +676,12 @@ p {
   background-color: var(--hero-footer-background-color);
 }
 
-.hero-box {
+.hero__container {
   padding-top: 200px;
   padding-bottom: 200px;
 }
 
-.hero-tittle {
+.hero__tittle {
   width: 696px;
   margin-right: auto;
   margin-left: auto;
@@ -691,28 +695,17 @@ p {
   color: var(--white-text-background-color);
 }
 
-.hero-btn {
-  padding: 10px 32px;
-  border-style: none;
-  border-radius: 4px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  color: var(--white-text-background-color);
-  background-color: var(--blue-text-background-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+.hero__button--center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* -----------features-section------------ */
-.features-list {
+.features {
   display: flex;
 }
 
-.features-canvas {
+.features__canvas {
   width: 270px;
   height: 120px;
   padding: 25px 100px;
@@ -721,11 +714,11 @@ p {
   background-color: var(--team-btn-background-color);
 }
 
-.features-item:not(:last-child) {
+.features__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.features-tittle {
+.features__tittle {
   margin-bottom: 10px;
 
   font-size: 14px;
@@ -734,7 +727,7 @@ p {
   text-transform: uppercase;
 }
 
-.features-text {
+.features__text {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -743,29 +736,29 @@ p {
 
 /* ----------work-section------------- */
 
-.section-work {
+.work-section {
   padding-bottom: 94px;
 }
 
-.work-list {
+.field-work {
   display: flex;
 }
 
-.work-item:not(:last-child) {
+.field-work__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.work-item {
+.field-work__item {
   position: relative;
 }
 
-.work-img {
+.field-work__img {
   display: block;
 }
 
-.join-call,
-.work-area-tittle,
-.subscribe-call {
+.join-section__slogan,
+.field-work__tittle,
+.subscribe-field__slogan {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -774,7 +767,7 @@ p {
   color: var(--white-text-background-color);
 }
 
-.work-area-tittle {
+.field-work__tittle {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -787,10 +780,12 @@ p {
 
 /* ----------team-section------------- */
 .team-section {
+  padding: 94px 0;
   background-color: var(--team-btn-background-color);
 }
 
-.work-team-tittle {
+.work-section__tittle,
+.team-section__tittle {
   margin-bottom: 50px;
 
   font-size: 36px;
@@ -799,15 +794,15 @@ p {
   letter-spacing: 0.03em;
 }
 
-.team-list {
+.team-section__list {
   display: flex;
 }
 
-.team-item:not(:last-child) {
+.teammate__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.team-card {
+.teammate__card {
   background-color: var(--white-text-background-color);
   padding-top: 30px;
   padding-bottom: 30px;
@@ -816,38 +811,38 @@ p {
   border-radius: 0px 0px 4px 4px;
 }
 
-.teammate-photo {
+.teammate__photo {
   display: block;
 }
 
-.teammate,
-.team-position {
+.teammate__name,
+.teammate__position {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
 }
 
-.teammate {
+.teammate__name {
   margin-bottom: 10px;
   font-weight: 500;
 }
 
-.team-position {
+.teammate__position {
   margin-bottom: 16px;
   color: var(--gray-text-color);
 }
 
-.teammate-links-box {
+.teammate__networks {
   display: flex;
   justify-content: center;
 }
 
-.teammate-item {
+.teammate__network {
   margin-right: 10px;
 }
 
-.teammate-link {
+.teammate__link {
   display: block;
   width: 44px;
   height: 44px;
@@ -859,16 +854,16 @@ p {
   transition-timing-function: var(--transition-timing-function);
 }
 
-.teammate-link:hover,
-.teammate-link:focus {
+.teammate__link:hover,
+.teammate__link:focus {
   background-color: var(--blue-text-background-color);
 }
 
-.teammate-item:last-child {
+.teammate__item:last-child {
   margin-right: 0;
 }
 
-.link-logo {
+.teammate__logo {
   transition-property: fill;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
@@ -876,8 +871,8 @@ p {
   fill: var(--border-client-icon-color);
 }
 
-.teammate-link:hover > .link-logo,
-.teammate-link:focus > .link-logo {
+.teammate__link:hover > .teammate__logo,
+.teammate__link:focus > .teammate__logo {
   fill: var(--white-text-background-color);
 }
 
